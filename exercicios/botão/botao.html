@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{width: 230px;
+            height: 200px;
+            background-color: blueviolet;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+            line-height: 200px;}
+    </style>
+</head>
+<body>
+    <h1>Botão:</h1>
+    <div>Interaja</div>
+    
+    <script>
+        var botao = window.document.getElementsByTagName('div')[0]
+
+        botao.addEventListener('click', clicar)
+        botao.addEventListener('mouseenter', entrar)
+        botao.addEventListener('mouseout', sair)
+
+        function clicar(){
+            botao.innerText="CLICOU"
+            botao.style.backgroundColor = 'red'}
+        function entrar(){
+            botao.innerText="Clique"
+            botao.style.backgroundColor="blue"} 
+        function sair(){
+            botao.innerText="Interaja"
+            botao.style.backgroundColor="blueviolet"
+        }   
+    </script>
+</body>
+</html>
