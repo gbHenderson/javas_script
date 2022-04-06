@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idade</title>
+    <style>
+        body{background-color: rgb(90, 88, 253);}
+        
+        header > h1 {color: white;
+                     font-family: Arial, Helvetica, sans-serif;
+                     text-align: center;}
+
+        section{background-color: white;
+                padding: 17px 15px 10px 10px;
+                margin: auto;
+                width: 410px;
+                font-family: Arial, Helvetica, sans-serif;
+                line-height: 35px;
+                border-radius: 12px;
+                box-shadow: 0.6px 0.6px 3px black;
+                font-weight: 500;} 
+                
+        footer{text-align: center;
+               font-family: Arial, Helvetica, sans-serif;
+               color: white;
+               margin-top: 10px;  }
+    </style>
+</head>
+<body>
+    <header><h1>Verificador de Idade</h1></header>
+    <section>
+        Ano de Nascimento: <input type="number" name="ano" id="anos" value="2000"> <br>
+        Sexo: 
+        <label for="Masculino">
+            <input type="radio" name="sex" id="Masculino" value="M"> Masculino</label>
+        
+        <label for="Feminino">
+            <input type="radio" name="sex" id="Feminino" value="F"> Feminino</label><br>
+        
+        <input type="button" value="Verificar" onclick="clicar()">
+        <p>Preencha os dados acima para ver o resultado!</p>
+        <div></div>
+    </section>
+    <footer><i>Gabriel Henderson</i></footer>
+
+    <script>
+        function clicar(){
+        var atual = new Date()
+        var anohj = atual.getFullYear()
+        var anous = Number(window.document.getElementById('anos').value)
+        var conta = anohj - anous
+        
+        var mexe = document.getElementsByTagName('p')[0]
+        var foto = document.getElementsByTagName('div')[0]
+
+        var sexo = document.getElementsByClassName('sex')
+        
+        if (anous > anohj) {window.alert('DADOS INVÁLIDOS!')}
+
+        if (anous == anohj || conta <= 2){
+        mexe.innerText = `Você é um bebê e têm ${conta} anos de vida!`
+        mexe.style.textAlign = 'center'
+        mexe.style.fontWeight = 'bold'
+        foto.style.backgroundImage = "url('bebe.jpg')"
+        foto.style.backgroundPosition = 'center center'
+        foto.style.width = '160px'
+        foto.style.height = '160px'
+        foto.style.borderRadius = '100%'
+        foto.style.margin = 'auto'}    
+    
+        if (conta > 2){
+            if (sex = 'M'){
+        mexe.innerHTML = `Você é uma <strong>criança masculina</strong> e tem <strong>${conta} anos</strong> de vida!`
+        mexe.style.textAlign = 'center'
+        foto.style.backgroundImage = "url('criança.jpg')"
+        foto.style.backgroundPosition = 'center center'
+        foto.style.width = '160px'
+        foto.style.height = '160px'
+        foto.style.borderRadius = '100%'
+        foto.style.margin = 'auto'}}
+
+        if (conta > 2){
+            if (sex = 'F'){
+        mexe.innerHTML = `Você é uma <strong>criança feminina</strong> e tem <strong>${conta} anos</strong> de vida!`
+        mexe.style.textAlign = 'center'
+        foto.style.backgroundImage = "url('criança.jpg')"
+        foto.style.backgroundPosition = 'center center'
+        foto.style.width = '160px'
+        foto.style.height = '160px'
+        foto.style.borderRadius = '100%'
+        foto.style.margin = 'auto'
+           }}     
+}
+    </script>
+</body>
+</html>
