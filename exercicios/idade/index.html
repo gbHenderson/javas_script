@@ -37,7 +37,7 @@
             <input type="radio" name="sex" id="Masculino" value="M"> Masculino</label>
         
         <label for="Feminino">
-            <input type="radio" name="sex" id="Feminino" value="F"> Feminino</label><br>
+            <input type="radio" name="sex" id="Feminino" value="F" checked> Feminino</label><br>
         
         <input type="button" value="Verificar" onclick="clicar()">
         <p>Preencha os dados acima para ver o resultado!</p>
@@ -55,10 +55,10 @@
         var mexe = document.getElementsByTagName('p')[0]
         var foto = document.getElementsByTagName('div')[0]
 
-        var sexo = document.getElementsByClassName('sex')
+        var sexo = document.getElementsByName('sex')
         
-        if (anous > anohj) {window.alert('DADOS INVÁLIDOS!')}
-
+    if (anous > anohj) {window.alert('DADOS INVÁLIDOS!')}
+    else{
         if (anous == anohj || conta <= 2){
         mexe.innerText = `Você é um bebê e têm ${conta} anos de vida!`
         mexe.style.textAlign = 'center'
@@ -70,28 +70,92 @@
         foto.style.borderRadius = '100%'
         foto.style.margin = 'auto'}    
     
-        if (conta > 2){
-            if (sex = 'M'){
-        mexe.innerHTML = `Você é uma <strong>criança masculina</strong> e tem <strong>${conta} anos</strong> de vida!`
+         if (conta > 2 && sexo[0].checked){
+        mexe.innerHTML = `Você é uma <strong>criança homem</strong> e tem <strong>${conta} anos</strong> de vida!`
         mexe.style.textAlign = 'center'
         foto.style.backgroundImage = "url('criança.jpg')"
         foto.style.backgroundPosition = 'center center'
         foto.style.width = '160px'
         foto.style.height = '160px'
         foto.style.borderRadius = '100%'
-        foto.style.margin = 'auto'}}
-
-        if (conta > 2){
-            if (sex = 'F'){
-        mexe.innerHTML = `Você é uma <strong>criança feminina</strong> e tem <strong>${conta} anos</strong> de vida!`
+        foto.style.margin = 'auto'}
+        
+        if (conta > 2 && sexo[1].checked){
+        mexe.innerHTML = `Você é uma <strong>criança mulher</strong> e tem <strong>${conta} anos</strong> de vida!`
         mexe.style.textAlign = 'center'
-        foto.style.backgroundImage = "url('criança.jpg')"
+        foto.style.backgroundImage = "url('criançaf.jpg')"
+        foto.style.backgroundPosition = 'left center'
+        foto.style.width = '160px'
+        foto.style.height = '160px'
+        foto.style.borderRadius = '100%'
+        foto.style.margin = 'auto'}
+
+        if (conta > 12 && sexo[0].checked){
+        mexe.innerHTML = `Você é um <strong>adolescente homem</strong> e tem <strong>${conta} anos</strong> de vida!`
+        mexe.style.textAlign = 'center'
+        foto.style.backgroundImage = "url('adof.jpg')"
         foto.style.backgroundPosition = 'center center'
         foto.style.width = '160px'
         foto.style.height = '160px'
         foto.style.borderRadius = '100%'
         foto.style.margin = 'auto'
-           }}     
+        foto.style.backgroundSize = 'cover'}
+
+        if (conta > 12 && sexo[1].checked){
+        mexe.innerHTML = `Você é uma <strong>adolescente mulher</strong> e tem <strong>${conta} anos</strong> de vida!`
+        mexe.style.textAlign = 'center'
+        foto.style.backgroundImage = "url('ado.jpg')"
+        foto.style.backgroundPosition = 'center center'
+        foto.style.width = '160px'
+        foto.style.height = '160px'
+        foto.style.borderRadius = '100%'
+        foto.style.margin = 'auto'
+        foto.style.backgroundSize = 'cover'}
+
+        if (conta > 18 && sexo[0].checked){
+        mexe.innerHTML = `Você é um <strong>adulto homem</strong> e tem <strong>${conta} anos</strong> de vida!`
+        mexe.style.textAlign = 'center'
+        foto.style.backgroundImage = "url('homem.jpg')"
+        foto.style.backgroundPosition = 'center center'
+        foto.style.width = '160px'
+        foto.style.height = '160px'
+        foto.style.borderRadius = '100%'
+        foto.style.margin = 'auto'
+        foto.style.backgroundSize = 'cover'}
+
+        if (conta > 18 && sexo[1].checked){
+        mexe.innerHTML = `Você é uma <strong>adulta mulher</strong> e tem <strong>${conta} anos</strong> de vida!`
+        mexe.style.textAlign = 'center'
+        foto.style.backgroundImage = "url('mulher.jpg')"
+        foto.style.backgroundPosition = 'center center'
+        foto.style.width = '160px'
+        foto.style.height = '160px'
+        foto.style.borderRadius = '100%'
+        foto.style.margin = 'auto'
+        foto.style.backgroundSize = 'cover'}
+
+        if (conta > 60 && sexo[0].checked){
+        mexe.innerHTML = `Você é um <strong>idoso homem</strong> e tem <strong>${conta} anos</strong> de vida!`
+        mexe.style.textAlign = 'center'
+        foto.style.backgroundImage = "url('velho.jpg')"
+        foto.style.backgroundPosition = 'center center'
+        foto.style.width = '160px'
+        foto.style.height = '160px'
+        foto.style.borderRadius = '100%'
+        foto.style.margin = 'auto'
+        foto.style.backgroundSize = 'cover'}
+
+        if (conta > 60 && sexo[1].checked){
+        mexe.innerHTML = `Você é uma <strong>idosa mulher</strong> e tem <strong>${conta} anos</strong> de vida!`
+        mexe.style.textAlign = 'center'
+        foto.style.backgroundImage = "url('velha.jpg')"
+        foto.style.backgroundPosition = 'center center'
+        foto.style.width = '160px'
+        foto.style.height = '160px'
+        foto.style.borderRadius = '100%'
+        foto.style.margin = 'auto'
+        foto.style.backgroundSize = 'cover'}
+    }
 }
     </script>
 </body>
