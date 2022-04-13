@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Escolha uma cor:</h1>
+    <h3 onclick="azular()" >azul</h3> 
+    <h3 onclick="rosar()">rosa</h3>
+    <h3 onclick="verdar()">verde</h3>
+
+    <script>
+        var corpo = document.getElementsByTagName('body')[0]
+        function azular(){
+        var cursor = document.getElementsByTagName('h3')[0]
+        cursor.style.cursor = 'pointer'
+        corpo.style.backgroundColor = 'blue'}
+
+        function rosar(){
+        var cursor = document.getElementsByTagName('h3')[1]
+        cursor.style.cursor = 'pointer'
+        corpo.style.backgroundColor = 'pink'}
+
+        function verdar(){
+        var cursor = document.getElementsByTagName('h3')[2]
+        cursor.style.cursor = 'pointer'    
+        corpo.style.backgroundColor = 'green'}
+    </script>
+</body>
+</html>
